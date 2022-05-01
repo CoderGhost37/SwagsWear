@@ -14,7 +14,12 @@ import { useStateContext } from "../../context/StateContext";
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd } = useStateContext();
+  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+
+  const handleBuyNow = async() => {
+    onAdd(product, qty);
+    setShowCart(true);
+  }
 
   return (
     <div>
@@ -84,12 +89,13 @@ const ProductDetails = ({ product, products }) => {
               type="button"
               className="py-2 px-5 mt-10 text-lg font-semibold text-red-500 w-36 md:w-48 border-[1px] border-red-500 scale-100 hover:scale-110 transition delay-150 duration-300 ease-linear"
               onClick={() => onAdd(product, qty)}
-            >
+              >
               Add to Cart
             </button>
             <button
               type="button"
               className="py-2 px-5 mt-10 text-lg font-semibold bg-red-500 text-white w-36 md:w-48 border-none scale-100 hover:scale-110 transition delay-150 duration-300 ease-linear"
+              onClick={handleBuyNow}
             >
               Buy Now
             </button>

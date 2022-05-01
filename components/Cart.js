@@ -6,10 +6,31 @@ import toast from "react-hot-toast";
 
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
+import getStripe from "../lib/getStripe";
 
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove } = useStateContext();
+
+  const handleCheckout = async() => {
+    const stripe = await getStripe();
+
+    const response = await fetch('/api/stripe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cartItems),
+    });
+
+    if(response.statusCode === 500) return;
+
+    const data = await response.json();
+
+    toast.loading('Redirecting...');
+
+    stripe.redirectToCheckout({ sessionId: data.id });
+  }
 
   return (
     <div
@@ -43,7 +64,7 @@ const Cart = () => {
           </div>
         )}
 
-        <div className="overflow-x-auto max-h-[70vh] py-5 px-2">
+        <div className="overflow-y-auto max-h-[70vh] py-5 px-2">
           {cartItems.length>=1 && cartItems.map((item, index) => (
             <div className="flex gap-7 px-1 py-5 md:p-5" key={item._id}>
               <img src={urlFor(item?.image[0])} alt="" className='w-1/4 h-1/4 md:w-[180px] md:h-[150px] rounded-lg  bg-gray-300' />
@@ -87,8 +108,8 @@ const Cart = () => {
             <div className="m-auto w-[300px] md:w-[400px]">
               <button
                type="button"
-               className="w-full max-w-[400px] rounded-lg py-2 px-3 border-none text-xl mt-5 uppercase bg-red-500 text-white scale-100 hover:scale-110 transition-transform duration-500 ease-linear"
-               onClick=""
+               className="w-full rounded-lg py-2 px-3 border-none text-xl mt-5 uppercase bg-red-500 text-white scale-100 hover:scale-110 transition-transform duration-500 ease-linear"
+               onClick={handleCheckout}
               >
                 Pay with Stripe
               </button>

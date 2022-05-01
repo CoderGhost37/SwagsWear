@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { client } from '../lib/client'
 import HeroBanner from "../components/HeroBanner";
 import FooterBanner from "../components/FooterBanner";
