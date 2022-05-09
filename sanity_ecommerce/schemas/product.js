@@ -18,6 +18,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'brand',
+            title: 'Brand',
+            type: 'string',
+        },
+        {
             name: 'slug',
             title: 'Slug',
             type: 'slug',
@@ -25,6 +30,12 @@ export default {
                 source: 'name',
                 maxLength: 90,
             }
+        },
+        {
+            name: 'bestseller',
+            title: 'BestSeller',
+            description: 'ADMIN Controls: Toggle if the product is a bestseller',
+            type: 'boolean',
         },
         {
             name: 'price',

@@ -35,7 +35,7 @@ const Cart = () => {
   return (
     <div
       ref={cartRef}
-      className="w-screen bg-zinc-800 bg-opacity-80 fixed top-0 right-0 z-10 transition-all duration-1000 ease-in-out"
+      className="w-screen fixed bg-zinc-800 bg-opacity-80 top-0 right-0 z-10 transition-all duration-1000 ease-in-out"
     >
       <div className="h-screen w-[300px] md:w-[45%] bg-white float-right relative p-1 md:py-10 md:px-2">
         <button

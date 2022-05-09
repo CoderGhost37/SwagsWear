@@ -6,8 +6,8 @@
     .pause {
       animation-play-state: paused;
     }
- }
+}
 
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }

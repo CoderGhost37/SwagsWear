@@ -10,11 +10,11 @@ const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
 
   return (
-    <div className="flex fixed justify-between items-center py-2 shadow-md">
+    <div className="flex justify-between items-center py-2 shadow-md">
       <Link href="/">
         <a className="flex title-font font-medium items-center md:justify-start justify-center">
-          <Image src="/about02.png" alt="" width="70" height="50" />
-          <span className="text-xl md:text-2xl font-bold">CodesWear</span>
+          <Image src="/logo.png" alt="" width="70" height="50" />
+          <span className="text-xl md:text-2xl font-bold">SwagsWear</span>
         </a>
       </Link>
       <button className="relative scale-100 hover:scale-110 mr-3" onClick={() => setShowCart(true)}>

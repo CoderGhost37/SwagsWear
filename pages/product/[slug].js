@@ -32,7 +32,7 @@ const ProductDetails = ({ product, products }) => {
             <img
               src={urlFor(image && image[index])}
               alt={name}
-              className="rounded-lg w-[350px] md:w-[400px] h-[350px] md:h-[400px] bg-gray-200 hover:bg-red-500 cursor-pointer transition ease-in-out duration-300"
+              className="rounded-lg w-[350px] md:w-[400px] h-[350px] md:h-[400px] bg-gray-200 hover:bg-red-500 transition ease-in-out duration-300"
             />
           </div>
           <div className="flex gap-2 mt-5">
@@ -43,8 +43,8 @@ const ProductDetails = ({ product, products }) => {
                 key={i}
                 className={
                   i === index
-                    ? "w-[70px] h-[70px] rounded-lg bg-red-500"
-                    : "rounded-lg w-[70px] h-[70px] cursor-pointer bg-gray-200"
+                    ? "w-[70px] h-[70px] rounded-lg p-[2px] border-2 border-red-500 bg-red-500"
+                    : "rounded-lg w-[70px] h-[70px] bg-gray-200"
                 }
                 onMouseEnter={() => setIndex(i)}
               />
@@ -52,7 +52,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
         </div>
 
-        <div>
+        <div className="max-w-2xl">
           <h1 className="font-bold text-4xl">{name}</h1>
           <div className="mt-2 flex gap-1 items-center">
             <div className="flex text-red-500">
@@ -142,7 +142,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-  const productsQuery = '*[_type == "product"]';
+  const productsQuery =  `*[_type == "product" && brand == '${slug.split('-')[0]}']`;
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);
 

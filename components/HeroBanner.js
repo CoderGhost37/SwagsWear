@@ -6,10 +6,10 @@ import { urlFor } from "../lib/client";
 
 const HeroBanner = ({ heroBanner: { smallText, midText, largeText1, slug, buttonText, image, desc } }) => {
   return (
-    <div className="py-10 px-6 relative rounded-lg w-full h-[500px] bg-slate-300">
-      <p className="text-xl font-semibold mt-5">{smallText}</p>
-      <h3 className="text-6xl font-bold mt-1">{midText}</h3>
-      <h1 className="text-8xl text-white font-bold mt-1">
+    <div className="py-5 md:py-10 px-2 md:px-6 relative rounded-lg w-full h-[500px] bg-slate-300">
+      <p className="md:text-xl text-lg font-semibold mt-5">{smallText}</p>
+      <h3 className="md:text-6xl sm:text-5xl text-4xl font-bold mt-1">{midText}</h3>
+      <h1 className="lg:text-9xl md:text-8xl sm:text-7xl text-5xl text-white flex-wrap font-bold mt-1">
         {largeText1}
       </h1>
       <img

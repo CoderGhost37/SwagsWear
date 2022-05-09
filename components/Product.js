@@ -14,10 +14,10 @@ const Product = ({ product }) => {
             alt=""
             width={250}
             height={250}
-            className="rounded-md bg-zinc-200 scale-100 transition delay-150 duration-300 ease-linear"
+            className="rounded-md h-[250px] w-[250px] bg-zinc-200 scale-100 transition delay-150 duration-300 ease-linear"
           />
-          <p className="font-semibold">{product.name}</p>
-          <p className="font-bold mt-1">₹{product.price}</p>
+          <p className="text-center font-semibold">{product.name}</p>
+          <p className="text-center font-bold mt-1">₹{product.price}</p>
         </div>
       </Link>
     </div>
