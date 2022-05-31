@@ -1,5 +1,5 @@
 {
-  "name": "codes-wear",
+  "name": "swags-wear",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,6 +15,7 @@
     "canvas-confetti": "^1.5.1",
     "next": "12.1.5",
     "next-sanity-image": "^3.2.1",
+    "nextjs-progressbar": "0.0.14",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-hot-toast": "^2.2.0",

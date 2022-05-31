@@ -27,7 +27,7 @@ const Success = () => {
             <p className='text-sm md:text-lg text-center font-semibold'>Check your email inbox for the receipt.</p>
             <p className='text-lg text-center font-semibold m-2 mt-7'>
                 If you have any questions, fell free to ask us on
-                <a className='ml-1 text-red-500' href="mailto:order@codeswear.com"> order@swagswear.com</a>
+                <a className='ml-1 text-red-500' href="mailto:order@swagswear.com"> order@swagswear.com</a>
             </p>
             <Link href="/">
                 <button type="button" className='w-[300px] rounded-lg py-2 px-3 border-none text-xl mt-5 uppercase bg-red-500 text-white scale-100 hover:scale-110 transition-transform duration-500 ease-linear'>
