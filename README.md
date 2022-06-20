@@ -1,6 +1,6 @@
 # SwagsWear
 
-![App Screenshot](assets/SwagsWear.jpg)
+![App Screenshot](public/SwagsWear.jpg)
 
 A full stack E-commerce web application build using nextjs, sanity and context-api with integrated stripe payment gateway.
 
