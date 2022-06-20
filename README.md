@@ -1,6 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SwagsWear
+
+![App Screenshot](assets/SwagsWear.jpg)
+
+A full stack E-commerce web application build using nextjs, sanity and context-api with integrated stripe payment gateway.
+
+This application includes addition and deletion of item(s) from cart functionlity and implements payment feature with integrated stripe payment gateway.
+
+Context api is used for state management.
 
 ## Getting Started
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
